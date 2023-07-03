@@ -1,0 +1,145 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Handsomerichbiga/Ui/main/Gamesneeze"))()
+
+local Window = Library:New({Name = 'Priv9.net  - (' .. game:GetService('Players').LocalPlayer.UserId .. ')', Size = Vector2.new(550, 630), Accent = Color3.fromRGB(98, 113, 165), Style = 1, PageAmmount = 7}); do
+
+local Rage = Window:Page({Name = "Rage"})
+
+local Section = Rage:Section({Name = "Silent Aim", Fill = true, Side = "Left"})
+
+
+
+
+
+
+local Rage = Section:Toggle({Name = "Enable", Default = false, Callback = function(State) print(State) end, Flag = "Section_Toggle"})
+
+
+local Visual = Window:Page({Name = "Visuals"})
+
+
+
+
+Section:Toggle({Name = "TtTt",Flag =  "", Default = true}):Colorpicker({Info = " Name", Flag = "", Alpha = 0, Default = Color3.fromRGB(255, 255, 255)})
+
+
+local Misc = Window:Page({Name = "Misc"})
+
+local Setting = Window:Page({Name = "Settings"})
+
+
+
+
+local Section = Setting:Section({Name = "Other", Fill = true, Side = "Left"})
+local Rage = Section:Button({Name = "Unload", Callback = function() Window:Unload() end, Flag = "Section_Button"})
+
+
+
+
+
+
+
+
+
+
+local Section = Setting:Section({Name = "Themes", Fill = true, Side = "Right"})
+
+
+
+
+
+
+
+
+
+
+
+      local Setting = Section:Dropdown({Name = 'Theme', Options = {'Default', 'Entropy', 'Dracula', 'Rifk7', 'Candy', 'Priv9', 'lambdahook'}, Pointer = 'Theme_Selector'})
+            local Setting = Section:Button({Name = 'Load', Callback = function()
+                if Library.pointers['Theme_Selector']:Get() == 'Default' then
+                    Library:UpdateColor('accent', Color3.fromRGB(98, 113, 165))
+                    Library:UpdateColor('lightcontrast', Color3.fromRGB(30,30,30))
+                    Library:UpdateColor('darkcontrast', Color3.fromRGB(20, 20, 20))
+                    Library:UpdateColor('outline', Color3.fromRGB(0, 0, 0))
+                    Library:UpdateColor('inline', Color3.fromRGB(50, 50, 50))
+                    Library:UpdateColor('textcolor', Color3.fromRGB(255, 255, 255))
+                    Library:UpdateColor('textborder', Color3.fromRGB(0, 0, 0))
+                    Library:UpdateColor('cursoroutline', Color3.fromRGB(10, 10, 10))
+
+                elseif Library.pointers['Theme_Selector']:Get() == 'Entropy' then
+                    Library:UpdateColor('accent', Color3.fromRGB(147,188,222))
+                    Library:UpdateColor('lightcontrast', Color3.fromRGB(56,54,61))
+                    Library:UpdateColor('darkcontrast', Color3.fromRGB(40,39,46))
+                    Library:UpdateColor('outline', Color3.fromRGB(0, 0, 0))
+                    Library:UpdateColor('inline', Color3.fromRGB(63,63,67))
+                    Library:UpdateColor('textcolor', Color3.fromRGB(255, 255, 255))
+                    Library:UpdateColor('textborder', Color3.fromRGB(0, 0, 0))
+                    Library:UpdateColor('cursoroutline', Color3.fromRGB(10, 10, 10))
+
+                elseif Library.pointers['Theme_Selector']:Get() == 'Dracula' then
+                    Library:UpdateColor('accent', Color3.fromRGB(125,104,142))
+                    Library:UpdateColor('lightcontrast', Color3.fromRGB(35,37,48))
+                    Library:UpdateColor('darkcontrast', Color3.fromRGB(30,31,40))
+                    Library:UpdateColor('outline', Color3.fromRGB(29,30,39))
+                    Library:UpdateColor('inline', Color3.fromRGB(49,45,62))
+                    Library:UpdateColor('textcolor', Color3.fromRGB(255, 255, 255))
+                    Library:UpdateColor('textborder', Color3.fromRGB(0, 0, 0))
+                    Library:UpdateColor('cursoroutline', Color3.fromRGB(10, 10, 10))
+
+                   elseif Library.pointers['Theme_Selector']:Get() == 'Rifk7' then
+                    Library:UpdateColor('accent', Color3.fromRGB(70,140,63))
+                    Library:UpdateColor('lightcontrast', Color3.fromRGB(34,34,34))
+                    Library:UpdateColor('darkcontrast', Color3.fromRGB(29,29,29))
+                    Library:UpdateColor('outline', Color3.fromRGB(0,0,0))
+                    Library:UpdateColor('inline', Color3.fromRGB(50, 50, 50))
+                    Library:UpdateColor('textcolor', Color3.fromRGB(255, 255, 255))
+                    Library:UpdateColor('textborder', Color3.fromRGB(0, 0, 0))
+                    Library:UpdateColor('cursoroutline', Color3.fromRGB(10, 10, 10))
+
+                   elseif Library.pointers['Theme_Selector']:Get() == 'Candy' then
+                    Library:UpdateColor('accent', Color3.fromRGB(198,101,135))
+                    Library:UpdateColor('lightcontrast', Color3.fromRGB(59,57,70))
+                    Library:UpdateColor('darkcontrast', Color3.fromRGB(48,47,53))
+                    Library:UpdateColor('outline', Color3.fromRGB(25,12,52))
+                    Library:UpdateColor('inline', Color3.fromRGB(50, 50, 50))
+                    Library:UpdateColor('textcolor', Color3.fromRGB(255, 255, 255))
+                    Library:UpdateColor('textborder', Color3.fromRGB(0, 0, 0))
+                    Library:UpdateColor('cursoroutline', Color3.fromRGB(10, 10, 10))
+
+                   elseif Library.pointers['Theme_Selector']:Get() == 'lambdahook' then
+                    Library:UpdateColor('accent', Color3.fromRGB(98,98,98))
+                    Library:UpdateColor('lightcontrast', Color3.fromRGB(79,79,79))
+                    Library:UpdateColor('darkcontrast', Color3.fromRGB(64,69,60))
+                    Library:UpdateColor('outline', Color3.fromRGB(62,62,62))
+                    Library:UpdateColor('inline', Color3.fromRGB(46,46,46))
+                    Library:UpdateColor('textcolor', Color3.fromRGB(255, 255, 255))
+                    Library:UpdateColor('textborder', Color3.fromRGB(0, 0, 0))
+                    Library:UpdateColor('cursoroutline', Color3.fromRGB(10, 10, 10))
+
+                end
+            end})
+
+Section:Colorpicker({Name = "Accent", Info = "Accent", Alpha = 0, Default = Color3.fromRGB(98, 113, 165), Callback = function(Color) Library:UpdateColor("Accent", Color) end})
+Section:Colorpicker({Name = "Light Contrast", Info = "Light Contrast", Alpha = 0, Default = Color3.fromRGB(30, 30, 30), Callback = function(Color) Library:UpdateColor("LightContrast", Color) end})
+Section:Colorpicker({Name = "Dark Contrast", Info = "Dark Contrast", Alpha = 0, Default = Color3.fromRGB(20, 20, 20), Callback = function(Color) Library:UpdateColor("DarkContrast", Color) end})
+Section:Colorpicker({Name = "Outline", Info = "Outline", Alpha = 0, Default = Color3.fromRGB(0,0,0), Callback = function(Color) Library:UpdateColor("Outline", Color) end})
+Section:Colorpicker({Name = "Inline", Info = "Inline", Alpha = 0, Default = Color3.fromRGB(50, 50, 50), Callback = function(Color) Library:UpdateColor("Inline", Color) end})
+Section:Colorpicker({Name = "TextColor", Info = "TextColor", Alpha = 0, Default = Color3.fromRGB(255,255,255), Callback = function(Color) Library:UpdateColor("TextColor", Color) end})
+
+
+
+
+
+
+                end
+            
+        
+    
+
+
+
+
+
+
+
+
+Window:Initialize()
